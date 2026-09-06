@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="QR Studio icon">
+  <defs><linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#6d45ff"/><stop offset="1" stop-color="#29dcff"/></linearGradient></defs>
+  <rect width="512" height="512" rx="112" fill="#0b0e18"/>
+  <rect x="20" y="20" width="472" height="472" rx="96" fill="none" stroke="url(#g)" stroke-width="20"/>
+  <g fill="none" stroke="#fff" stroke-width="34"><path d="M104 208V104h104M304 104h104v104M408 304v104H304M208 408H104V304"/><path d="M184 184h144v144H184z"/></g>
+  <rect x="239" y="239" width="34" height="34" rx="8" fill="#58f09a"/>
+</svg>
