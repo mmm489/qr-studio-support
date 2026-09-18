@@ -28,10 +28,14 @@ for (const page of pages) {
 }
 
 const privacy = await readFile(path.join(root, 'privacy.html'), 'utf8');
-for (const disclosure of ['Google Analytics for Firebase', 'Google AdMob', 'Supabase', 'GitHub Pages', 'not end-to-end encrypted', 'deletion markers', 'does not offer Sign in with Apple']) {
+for (const disclosure of ['Google Analytics for Firebase', 'Google AdMob', 'Supabase', 'GitHub Pages', 'not end-to-end encrypted', 'deletion markers', 'does not offer Sign in with Apple', 'a hash of the key', 'seven days after their server registration', 'hourly maintenance', 'does not prove deletion', 'excluded from device backups']) {
   assert(privacy.includes(disclosure), `Missing expected disclosure: ${disclosure}`);
 }
 const support = await readFile(path.join(root, 'support.html'), 'utf8');
 assert(!support.includes('If a future version offers QR Studio Pro'), 'Outdated subscription instructions');
 assert(!privacy.includes('You may optionally link it with Sign in with Apple'), 'Unavailable account linking advertised');
+for (const instruction of ['Check deletion result', 'Finish local cleanup', 'Keep history and disconnect', 'Do not uninstall', 'not the server account', 'Build 32 does not include the recovery controls']) {
+  assert(support.includes(instruction), `Missing recovery guidance: ${instruction}`);
+}
+assert(privacy.includes('Build 32 includes hosted-link deletion but not'), 'Recovery availability must not be advertised in build 32');
 console.log('PASS current feature disclosures');
